@@ -357,15 +357,18 @@ export default function DishManager() {
       </div>
 
       {/* Add / Edit Dish Modal */}
-      <DishForm
-        isOpen={formOpen}
-        initialData={editingDish}
-        onClose={() => {
-          setFormOpen(false);
-          setEditingDish(null);
-        }}
-        onSave={handleSaveDish}
-      />
+      {formOpen && (
+        <DishForm
+          key={editingDish?.id || "new"}
+          isOpen={formOpen}
+          initialData={editingDish}
+          onClose={() => {
+            setFormOpen(false);
+            setEditingDish(null);
+          }}
+          onSave={handleSaveDish}
+        />
+      )}
     </div>
   );
 }

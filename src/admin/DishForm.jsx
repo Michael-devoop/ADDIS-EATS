@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const CATEGORIES = [
   { value: "ethiopian", label: "Ethiopian Cuisine" },
@@ -8,30 +8,14 @@ const CATEGORIES = [
 ];
 
 export default function DishForm({ isOpen, initialData, onClose, onSave }) {
-  const [name, setName] = useState("");
-  const [category, setCategory] = useState("ethiopian");
-  const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
-  const [description, setDescription] = useState("");
-  const [available, setAvailable] = useState(true);
-
-  useEffect(() => {
-    if (initialData) {
-      setName(initialData.name || "");
-      setCategory(initialData.category || "ethiopian");
-      setPrice(initialData.price !== undefined ? String(initialData.price) : "");
-      setImage(initialData.image || "");
-      setDescription(initialData.description || "");
-      setAvailable(initialData.available !== false);
-    } else {
-      setName("");
-      setCategory("ethiopian");
-      setPrice("");
-      setImage("");
-      setDescription("");
-      setAvailable(true);
-    }
-  }, [initialData, isOpen]);
+  const [name, setName] = useState(initialData?.name || "");
+  const [category, setCategory] = useState(initialData?.category || "ethiopian");
+  const [price, setPrice] = useState(
+    initialData?.price !== undefined ? String(initialData.price) : ""
+  );
+  const [image, setImage] = useState(initialData?.image || "");
+  const [description, setDescription] = useState(initialData?.description || "");
+  const [available, setAvailable] = useState(initialData?.available !== false);
 
   if (!isOpen) return null;
 
