@@ -1,0 +1,182 @@
+[
+  {
+    "id": "eth-001",
+    "name": "Doro Wat",
+    "description": "Slow-simmered chicken in a deep berbere sauce, served with a hard-boiled egg and injera.",
+    "category": "ethiopian",
+    "price": 320,
+    "image": "/images/doro_wote.png",
+    "ingredients": ["Chicken", "Berbere spice", "Onions", "Garlic", "Ginger", "Boiled egg", "Injera"]
+  },
+  {
+    "id": "eth-002",
+    "name": "Tibs",
+    "description": "Sautéed beef or lamb cubes with onions, peppers, and rosemary, served sizzling.",
+    "category": "ethiopian",
+    "price": 300,
+    "image": "/images/tebs2.png",
+    "ingredients": ["Beef", "Onions", "Green peppers", "Rosemary", "Garlic", "Berbere spice"]
+  },
+  {
+    "id": "eth-003",
+    "name": "Kitfo",
+    "description": "Finely minced raw or lightly cooked beef seasoned with mitmita and niter kibbeh.",
+    "category": "ethiopian",
+    "price": 340,
+    "image": "/images/ktfo.png",
+    "ingredients": ["Minced beef", "Mitmita spice", "Niter kibbeh", "Ayib cheese", "Injera"]
+  },
+  {
+    "id": "eth-004",
+    "name": "Shiro Wat",
+    "description": "Rich chickpea flour stew simmered with garlic and berbere, a vegetarian favorite.",
+    "category": "ethiopian",
+    "price": 220,
+    "image": "/images/shiro.png",
+    "ingredients": ["Chickpea flour", "Garlic", "Onions", "Berbere spice", "Injera"]
+  },
+  {
+    "id": "eth-005",
+    "name": "Beyaynetu",
+    "description": "A vegetarian combination platter with lentils, cabbage, collard greens, and more on injera.",
+    "category": "ethiopian",
+    "price": 280,
+    "image": "/images/beyaynet.png",
+    "ingredients": ["Misir wot", "Gomen", "Atkilt", "Injera"]
+  },
+  {
+    "id": "eth-006",
+    "name": "Firfir",
+    "description": "Shredded injera mixed with spiced stew, a hearty and flavorful Ethiopian staple.",
+    "category": "ethiopian",
+    "price": 180,
+    "image": "/images/firfir.png",
+    "ingredients": ["Injera", "Berbere spice", "Onions", "Garlic", "Niter kibbeh"]
+  },
+  {
+    "id": "eth-007",
+    "name": "Zilzil Tibs",
+    "description": "Thin strips of tender beef, pan-seared with onions and green chili.",
+    "category": "ethiopian",
+    "price": 310,
+    "image": "/images/ktfo1.png",
+    "ingredients": ["Beef strips", "Onions", "Green chili", "Niter kibbeh"]
+  },
+  {
+    "id": "eth-008",
+    "name": "Misir Wot",
+    "description": "Split red lentils simmered in a spiced berbere sauce, served with injera.",
+    "category": "ethiopian",
+    "price": 190,
+    "image": "/images/shiro1.png",
+    "ingredients": ["Red lentils", "Berbere spice", "Onions", "Garlic", "Injera"]
+  },
+  {
+    "id": "pza-001",
+    "name": "Veggie Pizza",
+    "description": "Fresh vegetables on a crispy crust with tomato sauce and mozzarella.",
+    "category": "pizza",
+    "price": 350,
+    "image": "/images/vegi-pizza.png",
+    "ingredients": ["Pizza dough", "Tomato sauce", "Mozzarella", "Vegetables"]
+  },
+  {
+    "id": "pza-002",
+    "name": "Spicy Chicken Pizza",
+    "description": "Topped with berbere-marinated chicken, peppers, and mozzarella.",
+    "category": "pizza",
+    "price": 400,
+    "image": "/images/chicknpiza.png",
+    "ingredients": ["Pizza dough", "Chicken", "Berbere spice", "Bell peppers", "Mozzarella"]
+  },
+  {
+    "id": "brg-001",
+    "name": "Classic Beef Burger",
+    "description": "Grilled beef patty with lettuce, tomato, cheese, and house sauce.",
+    "category": "burgers",
+    "price": 280,
+    "image": "/images/classic-bu.png",
+    "ingredients": ["Beef patty", "Bun", "Lettuce", "Tomato", "Cheese", "House sauce"]
+  },
+  {
+    "id": "brg-002",
+    "name": "Spicy Chicken Burger",
+    "description": "Crispy fried chicken breast with jalapeños and spicy mayo.",
+    "category": "burgers",
+    "price": 260,
+    "image": "/images/special-bug.png",
+    "ingredients": ["Chicken breast", "Bun", "Jalapeños", "Spicy mayo", "Lettuce"]
+  },
+  {
+    "id": "brg-003",
+    "name": "Double Cheese Burger",
+    "description": "Double patty loaded with melted cheese, pickles, and special sauce.",
+    "category": "burgers",
+    "price": 320,
+    "image": "/images/burgr1.png",
+    "ingredients": ["Beef patty", "Cheese", "Pickles", "Special sauce", "Bun"]
+  },
+  {
+    "id": "brg-004",
+    "name": "BBQ Bacon Burger",
+    "description": "Smoky BBQ sauce, crispy bacon, and cheddar on a toasted brioche bun.",
+    "category": "burgers",
+    "price": 300,
+    "image": "/images/burger2.png",
+    "ingredients": ["Beef patty", "Bacon", "Cheddar", "BBQ sauce", "Brioche bun"]
+  },
+  {
+    "id": "eth-009",
+    "name": "Doro Wat Special",
+    "description": "Our chef's special doro wat with extra spices and a generous portion.",
+    "category": "ethiopian",
+    "price": 380,
+    "image": "/images/dorowot1.png",
+    "ingredients": ["Chicken", "Berbere spice", "Onions", "Garlic", "Ginger", "Boiled egg", "Injera"]
+  },
+  {
+    "id": "pza-003",
+    "name": "Pasta Primavera",
+    "description": "Fresh pasta tossed with seasonal vegetables in a light garlic sauce.",
+    "category": "pizza",
+    "price": 280,
+    "image": "/images/pasta.png",
+    "ingredients": ["Pasta", "Seasonal vegetables", "Garlic", "Olive oil", "Parmesan"]
+  },
+  {
+    "id": "drk-001",
+    "name": "Addis Special Spris",
+    "description": "Fresh layered tropical smoothie of mango, avocado, and papaya served chilled.",
+    "category": "drinks",
+    "price": 120,
+    "image": "/images/catd.png",
+    "ingredients": ["Mango", "Avocado", "Papaya", "Lime", "Honey"]
+  },
+  {
+    "id": "drk-002",
+    "name": "Traditional Buna (Coffee)",
+    "description": "Freshly roasted and clay-pot brewed Ethiopian highland Arabica coffee.",
+    "category": "drinks",
+    "price": 70,
+    "image": "/images/catd.png",
+    "ingredients": ["Ethiopian Arabica Coffee Beans", "Tenadam herb", "Water"]
+  },
+  {
+    "id": "drk-003",
+    "name": "Ethiopian Spiced Tea (Shai)",
+    "description": "Aromatic black tea brewed with crushed cinnamon, cloves, and ginger.",
+    "category": "drinks",
+    "price": 50,
+    "image": "/images/catd.png",
+    "ingredients": ["Black Tea", "Cinnamon", "Cardamom", "Cloves", "Ginger"]
+  },
+  {
+    "id": "drk-004",
+    "name": "Tej (Honey Wine)",
+    "description": "Traditional sweet Ethiopian fermented honey beverage with aromatic gesho hops.",
+    "category": "drinks",
+    "price": 180,
+    "image": "/images/catd.png",
+    "ingredients": ["Pure Honey", "Water", "Gesho hops"]
+  }
+]
