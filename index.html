@@ -2,10 +2,108 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Addis Eats — Ethiopian kitchens and neighborhood favorites, delivered across Addis Ababa." />
-    <title>Addis Eats — Ethiopian Food Delivery</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Primary Meta Tags -->
+    <title>Addis Eats — Authentic Ethiopian Food Delivery in Addis Ababa</title>
+    <meta name="title" content="Addis Eats — Authentic Ethiopian Food Delivery in Addis Ababa" />
+    <meta
+      name="description"
+      content="Craving authentic Doro Wat, Kitfo, spicy Tibs, wood-fired pizza, or gourmet burgers? Order online with Addis Eats for fast, hot delivery across Addis Ababa."
+    />
+    <meta
+      name="keywords"
+      content="Addis Ababa food delivery, Ethiopian restaurant, Ethiopian food, Doro Wat, Kitfo, Tibs, Addis Eats, online food ordering Ethiopia, fast food delivery Addis"
+    />
+    <meta name="author" content="Addis Eats" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#eb1400" />
+
+    <!-- Favicon & Mobile Icons -->
+    <link rel="icon" type="image/png" href="/images/addis-eats-logo-cropped.png" />
+    <link rel="apple-touch-icon" href="/images/addis-eats-logo-cropped.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Addis Eats" />
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Addis Eats" />
+    <meta property="og:url" content="https://addis-eats.vercel.app/" />
+    <meta property="og:title" content="Addis Eats — Authentic Ethiopian Food Delivery" />
+    <meta
+      property="og:description"
+      content="Freshly prepared Ethiopian dishes, artisan pizza, burgers, and drinks delivered hot to your doorstep across Addis Ababa."
+    />
+    <meta property="og:image" content="/images/addis-eats-logo.png" />
+    <meta property="og:image:secure_url" content="/images/addis-eats-logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Addis Eats Logo — Ethiopian Food Delivery" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AddisEats" />
+    <meta name="twitter:creator" content="@AddisEats" />
+    <meta name="twitter:title" content="Addis Eats — Authentic Ethiopian Food Delivery" />
+    <meta
+      name="twitter:description"
+      content="Order authentic Ethiopian cuisine, pizza, burgers, and drinks with fast delivery in Addis Ababa."
+    />
+    <meta name="twitter:image" content="/images/addis-eats-logo.png" />
+    <meta name="twitter:image:alt" content="Addis Eats Logo" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://addis-eats.vercel.app/" />
+
+    <!-- Structured Data (JSON-LD) for Rich Google Search Results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FastFoodRestaurant",
+        "name": "Addis Eats",
+        "image": "https://addis-eats.vercel.app/images/addis-eats-logo.png",
+        "logo": "https://addis-eats.vercel.app/images/addis-eats-logo.png",
+        "description": "Authentic Ethiopian kitchens, artisan pizzas, and neighborhood favorites delivered across Addis Ababa.",
+        "servesCuisine": ["Ethiopian", "Pizza", "Burgers", "Beverages"],
+        "priceRange": "$$",
+        "telephone": "+251911000000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bole Road",
+          "addressLocality": "Addis Ababa",
+          "addressRegion": "Addis Ababa",
+          "addressCountry": "ET"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 9.0107,
+          "longitude": 38.7613
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "08:00",
+            "closes": "23:00"
+          }
+        ],
+        "potentialAction": {
+          "@type": "OrderAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://addis-eats.vercel.app/menu",
+            "inLanguage": "en",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          },
+          "deliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
+        }
+      }
+    </script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />

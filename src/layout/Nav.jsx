@@ -76,7 +76,8 @@ function Nav() {
     <header className={`header sticky-top ${scrolled ? "header-scrolled" : ""}`}>
       <div className="container">
         <nav className="navbar navbar-expand-lg header-nav" aria-label="Main navigation">
-          <div className="navbar-header d-flex align-items-center justify-content-between w-100">
+          {/* Brand Logo & Mobile Trigger */}
+          <div className="navbar-header">
             <Link to="/" className="navbar-brand logo d-flex align-items-center">
               <img src="/images/addis-eats-logo.png" className="img-fluid brand-logo-img" alt="Addis Eats" />
             </Link>
@@ -100,141 +101,144 @@ function Nav() {
             </div>
           </div>
 
-          {/* Mobile Drawer Wrapper & Overlay */}
-          <div className={`menu-wrapper ${mobileOpen ? "menu-opened" : ""}`}>
-            <div className="menu-overlay" onClick={() => setMobileOpen(false)}></div>
-            <div className="main-menu-wrapper">
-              <div className="drawer-inner d-flex flex-column h-100">
-                <div className="menu-header">
-                  <Link to="/" className="menu-logo" onClick={() => setMobileOpen(false)}>
-                    <img
-                      src="/images/addis-eats-logo.png"
-                      className="img-fluid brand-logo-img"
-                      alt="Addis Eats"
-                    />
-                  </Link>
-                  <button
-                    type="button"
-                    id="menu_close"
-                    className="menu-close"
+          {/* Backdrop Overlay for mobile drawer */}
+          <div
+            className={`menu-overlay ${mobileOpen ? "opened" : ""}`}
+            onClick={() => setMobileOpen(false)}
+          ></div>
+
+          {/* Main Navigation (Desktop centered pill / Mobile slide-out drawer) */}
+          <div className={`main-menu-wrapper ${mobileOpen ? "menu-opened" : ""}`}>
+            <div className="drawer-content-inner d-flex flex-column flex-lg-row h-100 h-lg-auto align-items-lg-center">
+              <div className="menu-header">
+                <Link to="/" className="menu-logo" onClick={() => setMobileOpen(false)}>
+                  <img
+                    src="/images/addis-eats-logo.png"
+                    className="img-fluid brand-logo-img"
+                    alt="Addis Eats"
+                  />
+                </Link>
+                <button
+                  type="button"
+                  id="menu_close"
+                  className="menu-close"
+                  onClick={() => setMobileOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <i className="icon-x"></i>
+                </button>
+              </div>
+
+              <ul className="main-nav">
+                <li>
+                  <NavLink
+                    to="/"
+                    end
+                    className={({ isActive }) => (isActive ? "active" : "")}
                     onClick={() => setMobileOpen(false)}
-                    aria-label="Close menu"
                   >
-                    <i className="icon-x"></i>
-                  </button>
-                </div>
-
-                <ul className="main-nav">
-                  <li>
-                    <NavLink
-                      to="/"
-                      end
-                      className={({ isActive }) => (isActive ? "active" : "")}
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      <i className="icon-house me-2 d-lg-none"></i>
-                      <span>Home</span>
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to="/menu"
-                      className={({ isActive }) => (isActive ? "active" : "")}
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      <i className="icon-utensils me-2 d-lg-none"></i>
-                      <span>Menu</span>
-                    </NavLink>
-                  </li>
-                  <li className="d-lg-none">
-                    <NavLink
-                      to="/favorites"
-                      className={({ isActive }) => (isActive ? "active" : "")}
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      <i className="icon-heart me-2"></i>
-                      <span>Favorites</span>
-                    </NavLink>
-                  </li>
-                  <li className="d-lg-none">
-                    <NavLink
-                      to="/cart"
-                      className={({ isActive }) => (isActive ? "active" : "")}
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      <i className="icon-shopping-bag me-2"></i>
-                      <span>Cart</span>
-                      {itemCount > 0 && (
-                        <span className="badge-icon bg-primary ms-auto">{itemCount}</span>
-                      )}
-                    </NavLink>
-                  </li>
-                  {isSignedIn && (
-                    <>
-                      <li className="d-lg-none">
-                        <NavLink
-                          to="/orders"
-                          className={({ isActive }) => (isActive ? "active" : "")}
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          <i className="icon-clock me-2"></i>
-                          <span>Order History</span>
-                        </NavLink>
-                      </li>
-                      <li className="d-lg-none">
-                        <NavLink
-                          to="/admin"
-                          className={({ isActive }) => (isActive ? "active" : "")}
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          <i className="icon-shield me-2"></i>
-                          <span>Admin Dashboard</span>
-                        </NavLink>
-                      </li>
-                    </>
-                  )}
-                </ul>
-
-                {/* Mobile Drawer Auth Footer */}
-                <div className="drawer-footer d-lg-none mt-auto">
-                  {isSignedIn ? (
-                    <div className="d-flex flex-column gap-2">
-                      <div className="d-flex align-items-center gap-2 mb-1">
-                        <div
-                          className="rounded-circle d-flex align-items-center justify-content-center bg-primary text-white fw-bold flex-shrink-0"
-                          style={{ width: 38, height: 38, fontSize: 16 }}
-                        >
-                          {user?.name?.[0]?.toUpperCase() || "U"}
-                        </div>
-                        <div className="overflow-hidden">
-                          <strong className="d-block text-truncate fs-14">{user?.name}</strong>
-                          <small className="text-muted d-block text-truncate fs-12">{user?.email}</small>
-                        </div>
-                      </div>
-                      <button
-                        type="button"
-                        className="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2 mt-2"
-                        onClick={() => {
-                          setMobileOpen(false);
-                          logout();
-                          navigate("/");
-                        }}
+                    <i className="icon-house me-2 d-lg-none"></i>
+                    <span>Home</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/menu"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <i className="icon-utensils me-2 d-lg-none"></i>
+                    <span>Menu</span>
+                  </NavLink>
+                </li>
+                <li className="d-lg-none">
+                  <NavLink
+                    to="/favorites"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <i className="icon-heart me-2"></i>
+                    <span>Favorites</span>
+                  </NavLink>
+                </li>
+                <li className="d-lg-none">
+                  <NavLink
+                    to="/cart"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <i className="icon-shopping-bag me-2"></i>
+                    <span>Cart</span>
+                    {itemCount > 0 && (
+                      <span className="badge-icon bg-primary ms-auto">{itemCount}</span>
+                    )}
+                  </NavLink>
+                </li>
+                {isSignedIn && (
+                  <>
+                    <li className="d-lg-none">
+                      <NavLink
+                        to="/orders"
+                        className={({ isActive }) => (isActive ? "active" : "")}
+                        onClick={() => setMobileOpen(false)}
                       >
-                        <i className="icon-log-out"></i>
-                        <span>Sign Out</span>
-                      </button>
+                        <i className="icon-clock me-2"></i>
+                        <span>Order History</span>
+                      </NavLink>
+                    </li>
+                    <li className="d-lg-none">
+                      <NavLink
+                        to="/admin"
+                        className={({ isActive }) => (isActive ? "active" : "")}
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        <i className="icon-shield me-2"></i>
+                        <span>Admin Dashboard</span>
+                      </NavLink>
+                    </li>
+                  </>
+                )}
+              </ul>
+
+              {/* Mobile Drawer Auth Footer */}
+              <div className="drawer-footer d-lg-none mt-auto">
+                {isSignedIn ? (
+                  <div className="d-flex flex-column gap-2">
+                    <div className="d-flex align-items-center gap-2 mb-1">
+                      <div
+                        className="rounded-circle d-flex align-items-center justify-content-center bg-primary text-white fw-bold flex-shrink-0"
+                        style={{ width: 38, height: 38, fontSize: 16 }}
+                      >
+                        {user?.name?.[0]?.toUpperCase() || "U"}
+                      </div>
+                      <div className="overflow-hidden">
+                        <strong className="d-block text-truncate fs-14">{user?.name}</strong>
+                        <small className="text-muted d-block text-truncate fs-12">{user?.email}</small>
+                      </div>
                     </div>
-                  ) : (
-                    <Link
-                      to="/login"
-                      className="btn btn-primary primary-btn w-100 d-flex align-items-center justify-content-center gap-2"
-                      onClick={() => setMobileOpen(false)}
+                    <button
+                      type="button"
+                      className="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2 mt-2"
+                      onClick={() => {
+                        setMobileOpen(false);
+                        logout();
+                        navigate("/");
+                      }}
                     >
-                      <i className="icon-log-in"></i>
-                      <span>Sign In</span>
-                    </Link>
-                  )}
-                </div>
+                      <i className="icon-log-out"></i>
+                      <span>Sign Out</span>
+                    </button>
+                  </div>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="btn btn-primary primary-btn w-100 d-flex align-items-center justify-content-center gap-2"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <i className="icon-log-in"></i>
+                    <span>Sign In</span>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

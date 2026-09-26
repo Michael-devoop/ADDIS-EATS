@@ -2,10 +2,46 @@ import { Link } from "react-router-dom";
 import SpecialsList from "./SpecialsList";
 
 const categories = [
-  { name: "Ethiopian", image: "/images/doro_wote.png", slug: "ethiopian" },
-  { name: "Pizza", image: "/images/cat-p.png", slug: "pizza" },
-  { name: "Burgers", image: "/images/cat-bur.png", slug: "burgers" },
-  { name: "Drinks", image: "/images/catd.png", slug: "drinks" },
+  {
+    name: "Ethiopian",
+    image: "/images/doro_wote.png",
+    slug: "ethiopian",
+    subtitle: "Doro Wat, Kitfo & Spicy Tibs",
+    tag: "Authentic",
+    color: "#EB1400",
+    glowColor: "rgba(235, 20, 0, 0.22)",
+    iconBadge: "🇪🇹",
+  },
+  {
+    name: "Pizza",
+    image: "/images/cat-p.png",
+    slug: "pizza",
+    subtitle: "Wood-Fired & Cheesy",
+    tag: "Popular",
+    color: "#FF8400",
+    glowColor: "rgba(255, 132, 0, 0.22)",
+    iconBadge: "🍕",
+  },
+  {
+    name: "Burgers",
+    image: "/images/cat-bur.png",
+    slug: "burgers",
+    subtitle: "Juicy Gourmet Patties",
+    tag: "Craving",
+    color: "#F59E0B",
+    glowColor: "rgba(245, 158, 11, 0.22)",
+    iconBadge: "🍔",
+  },
+  {
+    name: "Drinks",
+    image: "/images/catd.png",
+    slug: "drinks",
+    subtitle: "Fresh Juices & Spiced Tea",
+    tag: "Chilled",
+    color: "#10B981",
+    glowColor: "rgba(16, 185, 129, 0.22)",
+    iconBadge: "🍹",
+  },
 ];
 
 export default function Home() {
@@ -78,29 +114,59 @@ export default function Home() {
       </section>
 
       {/* Categories */}
-      <section className="section choose-us-section">
+      <section className="section modern-categories-section">
         <div className="container">
           <div className="section-header text-center">
-            <h2>Top Categories</h2>
-            <p>
-              Explore our carefully curated categories featuring fresh ingredients and signature
-              flavors.
+            <span className="modern-section-pill">
+              <span className="pill-dot"></span>
+              Fresh &amp; Handcrafted Daily
+            </span>
+            <h2 className="modern-section-title">Top Categories</h2>
+            <p className="modern-section-subtitle">
+              Explore our hand-crafted menu featuring traditional Ethiopian specialties, artisan
+              pizzas, gourmet burgers, and refreshing drinks.
             </p>
           </div>
-          <div className="row g-4">
+
+          <div className="modern-categories-grid">
             {categories.map((cat) => (
-              <div key={cat.slug} className="col-lg-3 col-md-6 col-sm-6">
-                <Link to={`/menu?category=${cat.slug}`} className="text-decoration-none">
-                  <div className="choose-item text-center">
-                    <div className="choose-img mb-3">
-                      <img
-                        src={cat.image}
-                        alt={cat.name}
-                        className="img-fluid rounded-circle"
-                        style={{ width: 120, height: 120, objectFit: "cover" }}
-                      />
-                    </div>
-                    <h3>{cat.name}</h3>
+              <div key={cat.slug} className="modern-cat-col">
+                <Link
+                  to={`/menu?category=${cat.slug}`}
+                  className="modern-category-card"
+                  style={{
+                    "--cat-color": cat.color,
+                    "--cat-glow": cat.glowColor,
+                  }}
+                >
+                  <div className="modern-cat-badge">
+                    <span className="modern-cat-icon">{cat.iconBadge}</span>
+                    <span className="modern-cat-tag">{cat.tag}</span>
+                  </div>
+
+                  <div className="modern-cat-dish-stage">
+                    <div className="modern-cat-glow-ring"></div>
+                    <img
+                      src={cat.image}
+                      alt={cat.name}
+                      className="modern-cat-img"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.src = "/images/doro_wote.png";
+                      }}
+                    />
+                  </div>
+
+                  <div className="modern-cat-body">
+                    <h3 className="modern-cat-name">{cat.name}</h3>
+                    <p className="modern-cat-sub">{cat.subtitle}</p>
+                  </div>
+
+                  <div className="modern-cat-footer">
+                    <span className="modern-cat-link-text">Explore</span>
+                    <span className="modern-cat-arrow-btn" aria-hidden="true">
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </span>
                   </div>
                 </Link>
               </div>

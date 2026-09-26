@@ -21,19 +21,19 @@ export default function CategoryBar() {
   }
 
   return (
-    <div className="signature-tab">
-      <ul className="nav menu-tab-nav">
+    <div className="signature-tab modern-category-bar">
+      <ul className="nav menu-tab-nav modern-tab-nav">
         {categories.map((cat) => (
           <li key={cat.slug}>
             <button
               type="button"
-              className={active === cat.slug ? "active" : ""}
+              className={`modern-tab-btn ${active === cat.slug ? "active" : ""}`}
               onClick={() => select(cat.slug)}
             >
-              <span>
+              <span className="modern-tab-icon">
                 <img src={cat.icon} alt={cat.label} />
               </span>
-              {cat.label}
+              <span className="modern-tab-label">{cat.label}</span>
             </button>
           </li>
         ))}
